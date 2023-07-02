@@ -8,13 +8,13 @@
 - **点击鼠标左键**：选择按钮、发射小球
 - **移动鼠标**：控制游戏界面下方的“板子”的位置
 ## 游戏界面简介
-| 游戏界面  | 功能说明 |
-| ------------- | ------------- |
-| 游戏菜单界面  | 包含游戏名称、开始游戏按钮和退出游戏按钮  |
-| 游戏局内界面 | 游戏的主要界面  |
-| 游戏失败界面 | 告知玩家“游戏失败”，并提供返回菜单界面的按钮  |
-| 游戏成功界面 | 告知玩家“游戏胜利”，并提供返回菜单界面的按钮 |
+| 游戏界面  | 功能说明 | 截图 |
+| ------------- | ------------- | ------------- |
+| 游戏菜单界面  | 包含游戏名称、开始游戏按钮和退出游戏按钮  | ![image](https://github.com/ptpt-y/BreakoutGame/blob/master/readmeImg/menu.png)   |
+| 游戏局内界面 | 游戏的主要界面  | ![image](https://github.com/ptpt-y/BreakoutGame/blob/master/readmeImg/game.png)  |
+| 游戏失败界面 | 告知玩家“游戏失败”，并提供返回菜单界面的按钮  | ![image](https://github.com/ptpt-y/BreakoutGame/blob/master/readmeImg/fail.png)  |
+| 游戏成功界面 | 告知玩家“游戏胜利”，并提供返回菜单界面的按钮 | ![image](https://github.com/ptpt-y/BreakoutGame/blob/master/readmeImg/victory.png)   |
 ## 游戏流程图
 ![image](https://github.com/ptpt-y/BreakoutGame/blob/master/readmeImg/game-flowmap.png)
 ## 类图
- 
+ ![image](https://github.com/ptpt-y/BreakoutGame/blob/master/readmeImg/class.png)
