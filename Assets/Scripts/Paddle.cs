@@ -23,8 +23,8 @@ public class Paddle : MonoBehaviour
     private Camera mainCamera;
     private float paddleInitialY;
     private float defaultPaddleWidthInPixels = 200;
-    private float defautLeftClamp = 110;
-    private float defautRightClamp = 1810;
+    private float defautLeftClamp = 180;
+    private float defautRightClamp = 1740;
     private SpriteRenderer sr;
 
 

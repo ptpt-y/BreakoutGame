@@ -21,13 +21,14 @@ public class BricksManager : MonoBehaviour
     }
     #endregion
 
-    private int maxRows = 17;
-    private int maxCols = 12;
+    private int maxRows = 15;
+    private int maxCols = 15;
 
     private GameObject bricksContainer;
-    private float initialBrickSpawnPositionX = -1.96f;
-    private float initialBrickSpawnPositionY = 3.325f;
-    private float shiftAmount = 0.365f;
+    private float initialBrickSpawnPositionX = -7.58f;
+    private float initialBrickSpawnPositionY = 3.25f;
+    private float shiftAmountX = 0.365f * 3f;
+    private float shiftAmountY = 0.365f * 1.5f;
 
     public Brick brickPrefab;
     public Sprite[] Sprites;
@@ -39,12 +40,37 @@ public class BricksManager : MonoBehaviour
     private void Start()
     {
         this.bricksContainer = new GameObject("BricksContainer");
-        this.RemainingBricks = new List<Brick>();
         this.LevelsData = this.LoadLevelsData();
         this.GenerateBricks();
     }
+    public void LoadLevel(int level)
+    {
+        this.CurrentLevel = level;
+        this.ClearRemainingBricks();
+        this.GenerateBricks();
+    }
+    public void LoadNextLevel()
+    {
+        this.CurrentLevel++;
+        if (this.CurrentLevel >= this.LevelsData.Count)
+        {
+            GameManager.Instance.ShowVictoryScreen();
+        }
+        else
+        {
+            this.LoadLevel(this.CurrentLevel);
+        }
+    }
+    private void ClearRemainingBricks()
+    {
+        foreach (Brick brick in this.RemainingBricks)
+        {
+            Destroy(brick.gameObject);
+        }
+    }
     private void GenerateBricks()
     {
+        this.RemainingBricks = new List<Brick>();
         int[,] currentLevelData = this.LevelsData[this.CurrentLevel];
         float currentSpawnX = initialBrickSpawnPositionX;
         float currentSpawnY = initialBrickSpawnPositionY;
@@ -62,13 +88,13 @@ public class BricksManager : MonoBehaviour
                     this.RemainingBricks.Add(newBrick);
                     zShift += 0.0001f;
                 }
-                currentSpawnX += shiftAmount;
+                currentSpawnX += shiftAmountX;
                 if (col + 1 == this.maxCols)
                 {
                     currentSpawnX = initialBrickSpawnPositionX;
                 }
             }
-            currentSpawnY -= shiftAmount;
+            currentSpawnY -= shiftAmountY;
         }
         this.InitialBricksCount = this.RemainingBricks.Count;
     }

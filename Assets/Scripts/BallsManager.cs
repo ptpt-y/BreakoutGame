@@ -32,7 +32,7 @@ public class BallsManager : MonoBehaviour
     }
     private void Update()
     {
-        if (!GameManager.Instance.IsGameStarted)
+        if (!GameManager.Instance.IsMainMenu && !GameManager.Instance.IsGameStarted)
         {
             Vector3 paddlePosition = Paddle.Instance.gameObject.transform.position;
             Vector3 ballePosition = new Vector3(paddlePosition.x, paddlePosition.y + 0.27f, 0);
@@ -45,6 +45,14 @@ public class BallsManager : MonoBehaviour
                 GameManager.Instance.IsGameStarted = true;
             }
         }
+    }
+    public void ResetBalls()
+    {
+        foreach (var ball in this.Balls)
+        {
+            Destroy(ball.gameObject);
+        }
+        InitBall();
     }
     private void InitBall()
     {
