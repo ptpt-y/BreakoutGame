@@ -43,17 +43,26 @@ public class GameManager : MonoBehaviour
     {
         IsMainMenu = false;
         mainMenuScreen.SetActive(false);
+        AudioManager.Instance.BtnAudioPlay();
     }
     public void ExitClicked()
     {
+        AudioManager.Instance.BtnAudioPlay();
         Application.Quit();
     }
     public void RestartGame()
     {
+        StartCoroutine("TryAgain");
+    }
+    IEnumerator TryAgain()
+    {
+        AudioManager.Instance.BtnAudioPlay();
+        yield return new WaitForSeconds(0.25f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ShowVictoryScreen()
     {
+        AudioManager.Instance.VictoryAudioPlay();
         victoryScreen.SetActive(true);
     }
 
@@ -74,10 +83,12 @@ public class GameManager : MonoBehaviour
             lifeSprites[this.Lives].SetActive(false);
             if (this.Lives < 1)
             {
+                AudioManager.Instance.GameOverAudioPlay();
                 gameOverScreen.SetActive(true);
             }
             else
             {
+                AudioManager.Instance.LostLifeAudioPlay();
                 // reset balls
                 BallsManager.Instance.ResetBalls();
                 // stop the game

@@ -20,6 +20,7 @@ public class Brick : MonoBehaviour
 
     private void ApplyCollisionLogic(Ball ball)
     {
+        AudioManager.Instance.HitAudioPlay();
         this.Hitpoints--;
         if (this.Hitpoints <= 0)
         {

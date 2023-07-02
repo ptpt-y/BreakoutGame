@@ -58,6 +58,7 @@ public class BricksManager : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.LevelUpAudioPlay();
             this.LoadLevel(this.CurrentLevel);
         }
     }
