@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip gameOverClip;
     public AudioClip hitClip;
     public AudioClip fallClip;
-    public AudioClip leverUpClip;
+    public AudioClip levelUpClip;
     public AudioClip btnClip;
 
     public void VictoryAudioPlay()
@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
     }
     public void LevelUpAudioPlay()
     {
-        audioS.clip = leverUpClip;
+        audioS.clip = levelUpClip;
         audioS.volume = 1.0f;
         audioS.Play();
     }
