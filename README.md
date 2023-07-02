@@ -15,4 +15,6 @@
 | 游戏失败界面 | 告知玩家“游戏失败”，并提供返回菜单界面的按钮  |
 | 游戏成功界面 | 告知玩家“游戏胜利”，并提供返回菜单界面的按钮 |
 ## 游戏流程图
+![image](https://github.com/ptpt-y/BreakoutGame/blob/master/readmeImg/game-flowmap.png)
 ## 类图
+ 
