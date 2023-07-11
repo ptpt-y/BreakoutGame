@@ -10,11 +10,11 @@
 ## 游戏界面简介
 | 游戏界面  | 功能说明 | 截图 |
 | ------------- | ------------- | ------------- |
-| 游戏菜单界面  | 包含游戏名称、开始游戏按钮和退出游戏按钮  | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/blob/master/readmeImg/menu.png)   |
-| 游戏局内界面 | 游戏的主要界面  | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/blob/master/readmeImg/game.png)  |
-| 游戏失败界面 | 告知玩家“游戏失败”，并提供返回菜单界面的按钮  | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/blob/master/readmeImg/fail.png)  |
-| 游戏成功界面 | 告知玩家“游戏胜利”，并提供返回菜单界面的按钮 | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/blob/master/readmeImg/victory.png)   |
+| 游戏菜单界面  | 包含游戏名称、开始游戏按钮和退出游戏按钮  | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/raw/master/readmeImg/menu.png)   |
+| 游戏局内界面 | 游戏的主要界面  | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/raw/master/readmeImg/game.png)  |
+| 游戏失败界面 | 告知玩家“游戏失败”，并提供返回菜单界面的按钮  | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/raw/master/readmeImg/fail.png)  |
+| 游戏成功界面 | 告知玩家“游戏胜利”，并提供返回菜单界面的按钮 | ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/raw/master/readmeImg/victory.png)   |
 ## 游戏流程图
-![image](https://gitlab.bt/pengtingyu/breakoutgame/-/blob/master/readmeImg/game-flowmap.png)
+![image](https://gitlab.bt/pengtingyu/breakoutgame/-/raw/master/readmeImg/game-flowmap.png)
 ## 类图
- ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/blob/master/readmeImg/class.png)
+ ![image](https://gitlab.bt/pengtingyu/breakoutgame/-/raw/master/readmeImg/class.png)
