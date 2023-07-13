@@ -630,10 +630,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvaliableBuffs:
   - {fileID: 5493209600340942112, guid: 1006d734bfc92ef4f849847cbf1f0ab5, type: 3}
+  - {fileID: 3187761459080118691, guid: 4b8a062fb629bb242b0a5df6a8573c74, type: 3}
   AvaliablDebuffs:
   - {fileID: 4379117421755377540, guid: 172e6a732092f4948af8b3341c93b89f, type: 3}
-  BuffsChance: 0.6
-  DebuffsChance: 0.6
+  - {fileID: 5465608699521376317, guid: 8626605b5273ba647af90ded26f2f819, type: 3}
+  BuffsChance: 0.5
+  DebuffsChance: 0.5
 --- !u!1 &366175220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 5940805271538741364, guid: 6e5281a7e59cda14f96ca894da676213, type: 3}
-  initialBallSpeed: 400
+  initialBallSpeed: 300
+  speedEffectDuration: 5
+  speedEffectOn: 0
+  newSpeed: 0
 --- !u!1 &800176962
 GameObject:
   m_ObjectHideFlags: 0

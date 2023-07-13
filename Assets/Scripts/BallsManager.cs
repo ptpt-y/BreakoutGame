@@ -26,6 +26,8 @@ public class BallsManager : MonoBehaviour
     private Rigidbody2D initialBallRb;
     public float initialBallSpeed = 250;
     public List<Ball> Balls { get; set; }
+    public float speedEffectDuration = 5f;
+    private Vector2 originSpeed = Vector2.zero;
     private void Start()
     {
         InitBall();
@@ -62,6 +64,15 @@ public class BallsManager : MonoBehaviour
         initialBallRb = initialBall.GetComponent<Rigidbody2D>();
 
         this.Balls = new List<Ball> { initialBall };
+    }
+    public void ApplySpeedChangeEffect(float speedMul){
+        originSpeed = initialBallRb.velocity/initialBallRb.velocity.normalized;
+        initialBallRb.velocity = initialBallRb.velocity.normalized * speedMul * originSpeed;
+        StartCoroutine(ResetSpeedAfterTime());
+    }
+    public IEnumerator ResetSpeedAfterTime(){
+        yield return new WaitForSeconds(speedEffectDuration);
+        initialBallRb.velocity = initialBallRb.velocity.normalized * originSpeed;
     }
     public void SpawnBalls(Vector3 position, int count){
         for(int i = 0; i < count; i++){
