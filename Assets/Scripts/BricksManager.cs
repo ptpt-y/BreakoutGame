@@ -8,6 +8,7 @@ public class BricksManager : MonoBehaviour
     #region Singleton
     private static BricksManager _instance;
     public static BricksManager Instance => _instance;
+    public static event Action OnLevelLoaded;
     private void Awake()
     {
         if (_instance != null)
@@ -42,6 +43,7 @@ public class BricksManager : MonoBehaviour
         this.bricksContainer = new GameObject("BricksContainer");
         this.LevelsData = this.LoadLevelsData();
         this.GenerateBricks();
+        
     }
     public void LoadLevel(int level)
     {
@@ -58,7 +60,6 @@ public class BricksManager : MonoBehaviour
         }
         else
         {
-            AudioManager.Instance.LevelUpAudioPlay();
             this.LoadLevel(this.CurrentLevel);
         }
     }
@@ -98,6 +99,7 @@ public class BricksManager : MonoBehaviour
             currentSpawnY -= shiftAmountY;
         }
         this.InitialBricksCount = this.RemainingBricks.Count;
+        OnLevelLoaded?.Invoke();
     }
     private List<int[,]> LoadLevelsData()
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,11 +26,11 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenuScreen;
     public GameObject gameOverScreen;
     public GameObject victoryScreen;
-    public GameObject[] lifeSprites;
     public int Lives { get; set; }
     public int AvailibleLives = 3;
     public bool IsMainMenu { get; set; }
     public bool IsGameStarted { get; set; }
+    public static event Action<int> OnLifeLost;
 
     private void Start()
     {
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         if (BricksManager.Instance.RemainingBricks.Count <= 0)
         {
+            AudioManager.Instance.LevelUpAudioPlay();
             BallsManager.Instance.ResetBalls();
             GameManager.Instance.IsGameStarted = false;
             BricksManager.Instance.LoadNextLevel();
@@ -80,7 +82,6 @@ public class GameManager : MonoBehaviour
         if (BallsManager.Instance.Balls.Count <= 0)
         {
             this.Lives--;
-            lifeSprites[this.Lives].SetActive(false);
             if (this.Lives < 1)
             {
                 AudioManager.Instance.GameOverAudioPlay();
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                OnLifeLost?.Invoke(this.Lives);
                 AudioManager.Instance.LostLifeAudioPlay();
                 // reset balls
                 BallsManager.Instance.ResetBalls();

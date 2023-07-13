@@ -2518,10 +2518,6 @@ MonoBehaviour:
   mainMenuScreen: {fileID: 2050435693}
   gameOverScreen: {fileID: 95261859}
   victoryScreen: {fileID: 1966845258}
-  lifeSprites:
-  - {fileID: 1206389249}
-  - {fileID: 1230824157}
-  - {fileID: 276551636}
   AvailibleLives: 3
 --- !u!1 &1720885318
 GameObject:
@@ -2812,6 +2808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2881,9 +2878,58 @@ Transform:
   - {fileID: 312435872}
   - {fileID: 1684376502}
   - {fileID: 2121296595}
+  - {fileID: 1801577552}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1801577551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801577552}
+  - component: {fileID: 1801577553}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1801577552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801577551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1795556531}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801577553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801577551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20f957e7ea0a1b4d8af97a532f585c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeSprites:
+  - {fileID: 1206389249}
+  - {fileID: 1230824157}
+  - {fileID: 276551636}
 --- !u!1 &1824301921
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,7 +3154,6 @@ GameObject:
   - component: {fileID: 2050435694}
   - component: {fileID: 2050435696}
   - component: {fileID: 2050435695}
-  - component: {fileID: 2050435697}
   m_Layer: 5
   m_Name: MainMenuPanel
   m_TagString: Untagged
@@ -3177,18 +3222,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050435693}
   m_CullTransparentMesh: 1
---- !u!114 &2050435697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050435693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87eaadc691fd98340b5d7ac5e779775f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2055257513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,7 +3628,7 @@ MonoBehaviour:
   gameOverClip: {fileID: 8300000, guid: dd3fec8efac2b7649baa0373e06983bf, type: 3}
   hitClip: {fileID: 8300000, guid: 6d131a1d595ad9c42bc7b286c61e3852, type: 3}
   fallClip: {fileID: 8300000, guid: e229cf81b58771e4098e89e6be40d9f0, type: 3}
-  leverUpClip: {fileID: 8300000, guid: 7509b10b802540c41962c81fbbf0ca8a, type: 3}
+  levelUpClip: {fileID: 8300000, guid: 019ea4af8e915734e9317e5c23c12f30, type: 3}
   btnClip: {fileID: 8300000, guid: e8fdf31eae95d3f46941ae1e7c019381, type: 3}
 --- !u!82 &2121296597
 AudioSource:
